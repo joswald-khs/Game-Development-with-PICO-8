@@ -2,5 +2,5 @@
 
 ## Additional PICO-8 Resources
 
-https://nerdyteachers.com/PICO-8/
-https://mboffin.itch.io/pico8-educational-toolset
+* https://nerdyteachers.com/PICO-8/
+* https://mboffin.itch.io/pico8-educational-toolset
