@@ -2,10 +2,12 @@ pico-8 cartridge // http://www.pico-8.com
 version 43
 __lua__
 function _init()
+	g=0.025 --gravity
 	make_player()
 end
 
 function _update()
+	move_player()
 end
 
 function _draw()
@@ -26,6 +28,12 @@ end
 
 function draw_player()
  spr(p.sprite,p.x,p.y)
+end
+
+function move_player()
+ p.dy+=g
+ p.x+=p.dx
+ p.y+=p.dy
 end
 __gfx__
 00000000066666600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
