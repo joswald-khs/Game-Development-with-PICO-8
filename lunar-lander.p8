@@ -13,6 +13,7 @@ end
 function _draw()
  cls()
  draw_player()
+ draw_stars(50)
 end
 -->8
 function make_player()
@@ -36,6 +37,8 @@ function move_player()
  
  p.x+=p.dx
  p.y+=p.dy 
+ 
+ stay_on_screen()
 end
 
 function thrust()
@@ -47,6 +50,39 @@ function thrust()
   or btn(1) 
   or btn(2)) then sfx(0) end
 end 
+
+function stay_on_screen()
+ if(p.x<0) then
+  p.x=0
+  p.dx=0
+ end
+ 
+ if(p.x>119) then
+  p.x=119
+  p.dx=0
+ end
+ 
+ if(p.y<0) then
+  p.y=0
+  p.dy=0
+ end
+end
+-->8
+function rndbtwn(low,high)
+ return flr(rnd(high-low+1)+low)
+end
+-->8
+function draw_stars(n)
+ srand(1)
+ for i=1,n do
+  pset(
+   rndbtwn(0,127),
+   rndbtwn(0,127),
+   rndbtwn(5,7)
+  )
+ end
+ srand(time())
+end
 __gfx__
 00000000066666600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 0000000067cccc760000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
